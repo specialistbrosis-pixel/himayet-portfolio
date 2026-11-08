@@ -1,54 +1,34 @@
-/* =====================================
-   MD HIMAYET | PORTFOLIO JAVASCRIPT
-===================================== */
+/* Md Himayet — portfolio interactions */
+(() => {
+  const menuToggle = document.getElementById("menuToggle");
+  const primaryNav = document.getElementById("primaryNav");
 
-// Mobile Navigation
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("open");
-
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.textContent = isOpen ? "Close" : "Menu";
-  });
-
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("open");
+  if (menuToggle && primaryNav) {
+    const closeMenu = () => {
+      primaryNav.classList.remove("is-open");
       menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.textContent = "Menu";
+      menuToggle.setAttribute("aria-label", "Open navigation");
+    };
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") !== "true";
+      primaryNav.classList.toggle("is-open", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
     });
-  });
-}
 
-// Scroll Reveal Animation
-const revealItems = document.querySelectorAll(".reveal");
+    primaryNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+    document.addEventListener("click", (event) => {
+      if (!primaryNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+    });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 720) closeMenu();
+    });
+  }
 
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => {
-    item.classList.add("visible");
-  });
-}
-
-// Current Year (if footer has #currentYear)
-const yearElement = document.getElementById("currentYear");
-
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
-}
+  const yearElement = document.getElementById("currentYear");
+  if (yearElement) yearElement.textContent = String(new Date().getFullYear());
+})();

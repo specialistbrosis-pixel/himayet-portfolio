@@ -1,521 +1,254 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b1115" />
-  <meta name="description" content="Md Himayet is a science student exploring mechanical engineering, intelligent automation, electric mobility and sustainable technology." />
-  <meta property="og:title" content="Md Himayet | Engineering Portfolio" />
-  <meta property="og:description" content="A student portfolio about engineering projects, learning and future interests." />
-  <meta property="og:type" content="website" />
-  <title>Md Himayet | Engineering Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .project-diagram {
-      min-height: 126px;
-      margin: 22px 0 20px;
-      padding: 12px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      background: linear-gradient(145deg, rgba(184,233,134,.07), rgba(19,33,39,.5));
-    }
-    .project-diagram svg {
-      display: block;
-      width: 100%;
-      max-width: 290px;
-      height: 105px;
-    }
-    .diagram-caption {
-      color: var(--subtle);
-      font-size: .66rem;
-      line-height: 1.5;
-      margin: -9px 0 17px;
-    }
-    .project-card { min-height: 430px; }
-    .contact-note { line-height: 1.7; }
-    @media (max-width: 640px) {
-      .project-card { min-height: 400px; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1716">
+  <meta name="description" content="Md Himayet's student engineering portfolio: mechanical systems, robotics and mechatronics, intelligent automation, and sustainable technology.">
+  <meta property="og:title" content="Md Himayet | Engineering Portfolio">
+  <meta property="og:description" content="Student projects, engineering interests, and a learning journey across mechanical systems, automation, and sustainable technology.">
+  <meta property="og:type" content="website">
+  <title>Md Himayet — Engineering Portfolio</title>
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="Md Himayet home">
-        <span class="brand-mark">MH</span>
-        <span>MD HIMAYET</span>
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Md Himayet, home">
+        <span class="brand-mark" aria-hidden="true">MH</span>
+        <span class="brand-copy"><strong>MD HIMAYET</strong><small>ENGINEERING PORTFOLIO</small></span>
       </a>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
-        Menu
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-controls="primaryNav" aria-expanded="false">
+        <span></span><span></span>
       </button>
-
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#work">Projects</a>
-        <a href="#focus">Interests</a>
-        <a href="#skills">Skills</a>
-        <a class="nav-cta" href="#contact">Let's connect <span class="arrow">↗</span></a>
+      <nav class="nav-menu" id="primaryNav" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#projects">Projects</a><a href="#interests">Interests</a><a href="#learning">Learning</a>
+        <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="home">
+  <main id="main">
+    <section class="hero section-shell" id="home">
       <div class="container hero-grid">
-        <div class="hero-content reveal">
-          <div class="eyebrow">Student · Engineering portfolio</div>
-
-          <h1>
-            Curious mind.<br />
-            <span>Future engineer.</span>
-          </h1>
-
-          <p class="hero-copy">
-            I’m <strong>Md Himayet</strong>, a science student from Bangladesh
-            exploring mechanical engineering, intelligent automation and
-            sustainable mobility. I enjoy understanding how things work and
-            turning that curiosity into useful ideas.
-          </p>
-
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> Student portfolio <span class="eyebrow-dot">/</span> Bangladesh</div>
+          <h1>Curiosity into<br><em>engineering.</em></h1>
+          <p class="hero-lead">I’m <strong>Md Himayet</strong>, a science student building an early foundation in Mechanical Engineering, Robotics &amp; Mechatronics, Intelligent Automation, and Sustainable Technology.</p>
+          <p class="hero-support">I learn by exploring how things work, trying small projects, and documenting what each experience teaches me.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#work">
-              Explore my projects <span class="arrow">↗</span>
-            </a>
-            <a class="button button-secondary" href="#about">
-              A little about me
-            </a>
+            <a class="button button-primary" href="#projects">Explore projects <span aria-hidden="true">↘</span></a>
+            <a class="button button-quiet" href="#about">About me <span aria-hidden="true">↗</span></a>
           </div>
+          <div class="hero-footnote"><span class="availability-dot" aria-hidden="true"></span> Focused on learning, experimentation, and future undergraduate study</div>
         </div>
 
-        <div class="hero-visual reveal" aria-label="Abstract engineering-inspired illustration">
-          <div class="orbit">
-            <span class="orbit-dot"></span>
-
-            <div class="orbit-core">
-              <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-                <circle cx="50" cy="50" r="28" stroke="#183022" stroke-width="5" />
-                <circle cx="50" cy="50" r="9" fill="#183022" />
-                <path d="M50 9V22M50 78V91M9 50H22M78 50H91M21 21L30 30M70 70L79 79M79 21L70 30M30 70L21 79"
-                  stroke="#183022" stroke-width="6" stroke-linecap="round" />
-                <path d="M50 35V50L62 57"
-                  stroke="#183022" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-
-            <div class="orbit-label label-one">
-              <small>Curiosity</small>
-              <strong>Understand the system</strong>
-            </div>
-
-            <div class="orbit-label label-two">
-              <small>Direction</small>
-              <strong>Build for the future</strong>
-            </div>
-          </div>
-
-          <div class="visual-caption">Learn · Explore · Create</div>
+        <div class="hero-art" aria-label="Abstract engineering-inspired graphic">
+          <div class="art-grid" aria-hidden="true"></div>
+          <svg class="hero-machine" viewBox="0 0 440 440" role="img" aria-labelledby="heroArtTitle">
+            <title id="heroArtTitle">Abstract illustration of connected mechanical forms</title>
+            <defs>
+              <linearGradient id="ringGradient" x1="80" y1="70" x2="370" y2="370" gradientUnits="userSpaceOnUse"><stop stop-color="#c7f58b"/><stop offset="1" stop-color="#5a9b81"/></linearGradient>
+              <linearGradient id="coreGradient" x1="140" y1="140" x2="300" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#d9ffa5"/><stop offset="1" stop-color="#79b887"/></linearGradient>
+            </defs>
+            <circle cx="220" cy="220" r="166" fill="none" stroke="#d8e5da" stroke-opacity=".15"/>
+            <circle cx="220" cy="220" r="131" fill="none" stroke="url(#ringGradient)" stroke-width="1.5" stroke-dasharray="3 9"/>
+            <circle cx="220" cy="220" r="100" fill="#17302c" stroke="#7daa86" stroke-opacity=".55"/>
+            <path d="M220 88v26m0 212v26M88 220h26m212 0h26M126.7 126.7l18.4 18.4m149.8 149.8 18.4 18.4m0-186.6-18.4 18.4m-149.8 149.8-18.4 18.4" stroke="#d1f2a4" stroke-width="9" stroke-linecap="round"/>
+            <path d="M220 145c-41.4 0-75 33.6-75 75s33.6 75 75 75 75-33.6 75-75-33.6-75-75-75Z" fill="url(#coreGradient)"/>
+            <path d="M220 176v47l31 18" fill="none" stroke="#15302a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="220" cy="220" r="10" fill="#15302a"/>
+            <circle cx="346" cy="116" r="9" fill="#f0a979" stroke="#0b1716" stroke-width="5"/>
+            <circle cx="94" cy="305" r="7" fill="#c7f58b"/>
+            <path d="M49 352h88M303 70h82" stroke="#c7f58b" stroke-opacity=".45"/>
+          </svg>
+          <div class="art-label art-label-top"><span>01</span><strong>Understand</strong></div>
+          <div class="art-label art-label-bottom"><span>02</span><strong>Experiment</strong></div>
+          <div class="art-caption">MECHANICAL THINKING · OPEN-ENDED LEARNING</div>
         </div>
       </div>
     </section>
 
-    <!-- AREAS OF INTEREST -->
-    <div class="ticker">
-      <div class="container ticker-inner">
-        <span class="ticker-label">Areas I’m exploring</span>
-        <div class="ticker-items">
-          <span>Mechanical systems</span>
-          <span>Automation</span>
-          <span>Electric mobility</span>
-          <span>Clean energy</span>
-        </div>
+    <section class="interest-strip" aria-label="Main areas of interest">
+      <div class="container strip-inner">
+        <span class="strip-label">Exploring</span><span>Mechanical systems</span><span>Robotics &amp; mechatronics</span><span>Intelligent automation</span><span>Sustainable technology</span>
       </div>
-    </div>
+    </section>
 
-    <!-- ABOUT -->
-    <section id="about">
+    <section class="section-shell about-section" id="about">
       <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">01 / About</div>
-            <h2>Driven by questions.<br />Grounded in learning.</h2>
-          </div>
-
-          <p class="section-intro">
-            A little context about the person behind the curiosity — and the
-            kind of engineer I’m working towards becoming.
-          </p>
+        <div class="section-heading">
+          <div><p class="section-index">01 / ABOUT</p><h2>Learning how<br>systems work.</h2></div>
+          <p class="section-intro">I’m interested in the connections between mechanical design, motion, energy, electronics, and control.</p>
         </div>
-
-        <div class="about-grid">
-          <aside class="about-aside reveal">
-            <div class="aside-index">01—</div>
-            <h3>Learning with purpose</h3>
-            <p>
-              I believe strong engineering starts with strong fundamentals:
-              asking better questions, understanding the science and learning
-              by doing.
-            </p>
-          </aside>
-
-          <div class="about-copy reveal">
-            <p>
-              I’m building my foundation through
-              <strong>physics, mathematics and independent learning</strong>.
-              I enjoy looking at everyday problems analytically and exploring
-              how engineering can make systems smarter, safer and more efficient.
-            </p>
-
-            <p>
-              My current learning journey includes introductory work with
-              <strong>Python and CAD</strong>, alongside an interest in
-              mechanical linkages, energy systems and future transportation
-              technologies.
-            </p>
-
-            <p>
-              I’m at an early stage, so this portfolio is also a record of
-              progress: projects, new skills and ideas that I develop along
-              the way.
-            </p>
-
-            <div class="principles">
-              <div class="principle">
-                <small>Approach</small>
-                <strong>Curiosity first</strong>
-              </div>
-              <div class="principle">
-                <small>Mindset</small>
-                <strong>Keep improving</strong>
-              </div>
-              <div class="principle">
-                <small>Goal</small>
-                <strong>Useful innovation</strong>
-              </div>
+        <div class="about-layout">
+          <div class="about-note">
+            <span class="note-symbol" aria-hidden="true">“</span>
+            <p>Good engineering begins with careful questions, strong fundamentals, and the willingness to test an idea.</p>
+            <span class="note-caption">MY LEARNING APPROACH</span>
+          </div>
+          <div class="about-text">
+            <p>I’m developing my foundation through <strong>physics and mathematics</strong>, independent learning, and hands-on exploration. I enjoy looking at everyday mechanisms and asking how their parts work together.</p>
+            <p>My current exploration includes introductory <strong>Python and CAD</strong>, simple mechanical-linkage concepts, and small experiments related to energy and motion.</p>
+            <p>This portfolio is a work in progress. It records student projects and areas I want to investigate further; it is not a claim of professional engineering experience.</p>
+            <div class="about-facts">
+              <div><span>Background</span><strong>Science student</strong></div>
+              <div><span>Based in</span><strong>Bangladesh</strong></div>
+              <div><span>Study direction</span><strong>Engineering</strong></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="work-section" id="work">
+    <section class="section-shell projects-section" id="projects">
       <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">02 / Selected work</div>
-            <h2>Projects &<br />experiments.</h2>
-          </div>
-
-          <p class="section-intro">
-            A collection of student projects and concept-based learning.
-            The diagrams are simplified explanations, not construction drawings.
-          </p>
+        <div class="section-heading">
+          <div><p class="section-index">02 / PROJECTS</p><h2>Experiments,<br>ideas &amp; learning.</h2></div>
+          <p class="section-intro">A small selection of projects and explorations. Descriptions stay close to what I have worked on; unmeasured results are not presented as achievements.</p>
         </div>
 
         <div class="project-grid">
-
-          <!-- PROJECT 01: GREEN HYDROGEN -->
-          <article class="project-card reveal">
-            <div class="project-top">
-              <span>Project 01</span>
-              <span>Energy</span>
-            </div>
-
-            <div class="project-diagram" role="img"
-              aria-label="Conceptual green hydrogen pathway from renewable electricity to hydrogen production and use">
-
-              <svg viewBox="0 0 300 110" fill="none" aria-hidden="true">
-                <g stroke="#b8e986" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="5" y="24" width="78" height="58" rx="9" fill="#172a27" />
-                  <path d="M28 60 38 39 46 52 56 34 64 60H28Z" />
-                  <path d="M44 24V15M35 15H53" />
-
-                  <path d="M86 53H108M102 47L108 53 102 59" />
-
-                  <rect x="112" y="24" width="78" height="58" rx="9" fill="#172a27" />
-                  <path d="M136 37V68M166 37V68M136 52H166" />
-                  <path d="M151 29V20M146 25 151 20 156 25" />
-
-                  <path d="M193 53H215M209 47L215 53 209 59" />
-
-                  <rect x="219" y="24" width="76" height="58" rx="9" fill="#172a27" />
-                  <path d="M242 63V44Q242 35 251 35Q260 35 260 44V63M238 63H265M251 35V28" />
+          <article class="project-card">
+            <div class="project-visual visual-hydrogen">
+              <span class="visual-label">ENERGY SYSTEMS</span>
+              <svg viewBox="0 0 320 150" role="img" aria-label="Conceptual green hydrogen pathway illustration">
+                <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="28" width="82" height="75" rx="12"/><path d="M27 82 42 48l12 21 9-15 13 28H27Z"/><path d="M49 28V16m-8 0h16"/>
+                  <path d="M99 66h24m-7-7 7 7-7 7"/><rect x="128" y="28" width="75" height="75" rx="12"/><path d="M151 44v43m29-43v43m-29-21h29"/><path d="M165 28V17m-6 6 6-6 6 6"/>
+                  <path d="M211 66h24m-7-7 7 7-7 7"/><rect x="240" y="28" width="71" height="75" rx="12"/><circle cx="275" cy="62" r="20"/><path d="M275 42v40m-20-20h40"/>
                 </g>
-
-                <g fill="#dce9dc" font-size="8" text-anchor="middle">
-                  <text x="44" y="96">Renewable power</text>
-                  <text x="151" y="96">Electrolysis</text>
-                  <text x="257" y="96">Hydrogen</text>
-                </g>
+                <g fill="currentColor" font-size="9" text-anchor="middle"><text x="50" y="124">Renewable power</text><text x="165" y="124">Electrolysis</text><text x="275" y="124">Hydrogen</text></g>
               </svg>
             </div>
-
-            <p class="diagram-caption">
-              Conceptual pathway · renewable electricity → hydrogen production → potential applications
-            </p>
-
-            <h3>Green Hydrogen Exploration</h3>
-
-            <p>
-              A student project exploring green hydrogen and its potential
-              role in cleaner energy systems.
-            </p>
-
-            <div class="project-foot">
-              <span class="status">Student project</span>
-              <span>Energy systems</span>
+            <div class="project-content">
+              <div class="project-meta"><span>PROJECT 01</span><span class="project-kind">Exploration project</span></div>
+              <h3>Green Hydrogen</h3>
+              <p>A student project exploring green hydrogen and its potential role in cleaner energy systems. The topic led me to learn about renewable electricity, hydrogen production, and possible energy applications.</p>
+              <div class="project-tags"><span>Clean energy</span><span>Energy systems</span></div>
             </div>
           </article>
 
-          <!-- PROJECT 02: TESLA COIL -->
-          <article class="project-card reveal">
-            <div class="project-top">
-              <span>Project 02</span>
-              <span>Electronics</span>
-            </div>
-
-            <div class="project-diagram" role="img"
-              aria-label="High-level conceptual illustration of an electrical energy source, electromagnetic field and visible discharge phenomenon">
-
-              <svg viewBox="0 0 300 110" fill="none" aria-hidden="true">
-                <g stroke="#b8e986" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="7" y="29" width="72" height="48" rx="9" fill="#172a27" />
-                  <path d="M24 53H35M29.5 47.5V58.5M45 53H61" />
-
-                  <path d="M84 53H108M102 47L108 53 102 59" />
-
-                  <circle cx="150" cy="53" r="28" stroke-dasharray="4 5" />
-                  <circle cx="150" cy="53" r="14" />
-                  <path d="M150 39V67M136 53H164" />
-
-                  <path d="M181 53H205M199 47L205 53 199 59" />
-
-                  <path d="M230 69 241 53 235 53 250 34 245 49 254 49 238 69" />
-                  <path d="M223 77H263" opacity=".55" />
-                </g>
-
-                <g fill="#dce9dc" font-size="8" text-anchor="middle">
-                  <text x="43" y="91">Electrical energy</text>
-                  <text x="150" y="91">Field concept</text>
-                  <text x="244" y="91">Discharge</text>
+          <article class="project-card">
+            <div class="project-visual visual-tesla">
+              <span class="visual-label">ELECTROMAGNETISM</span>
+              <svg viewBox="0 0 320 150" role="img" aria-label="Abstract electromagnetic field illustration">
+                <g fill="none" stroke="currentColor" stroke-linecap="round">
+                  <circle cx="160" cy="70" r="48" stroke-width="1.5" stroke-dasharray="3 7"/><circle cx="160" cy="70" r="34" stroke-width="2"/><circle cx="160" cy="70" r="19" stroke-width="2.5"/>
+                  <path d="M160 26v88M116 70h88" stroke-width="1.5" opacity=".7"/><path d="m160 30 8 9m-8-9-8 9m8 72 8-9m-8 9-8-9" stroke-width="2"/>
+                  <path d="M226 37q18 14 0 28t0 28M94 37q-18 14 0 28t0 28" stroke-width="2"/><path d="M231 104h38m-19-9v18M51 104h38m-19-9v18" stroke-width="1.5"/>
                 </g>
               </svg>
             </div>
-
-            <p class="diagram-caption">
-              High-level learning illustration · no construction or operating details
-            </p>
-
-            <h3>Tesla Coil Project</h3>
-
-            <p>
-              A student team activity that introduced me to electromagnetism,
-              electrical phenomena and experimental learning.
-            </p>
-
-            <div class="project-foot">
-              <span class="status">Team activity</span>
-              <span>Electromagnetism</span>
+            <div class="project-content">
+              <div class="project-meta"><span>PROJECT 02</span><span class="project-kind">Team activity</span></div>
+              <h3>Tesla Coil Project</h3>
+              <p>A team project that introduced me to electromagnetism and the relationship between electrical and magnetic fields. I include it here as a record of participation and learning, without construction or operating specifications.</p>
+              <div class="project-tags"><span>Electromagnetism</span><span>Teamwork</span></div>
             </div>
           </article>
 
-          <!-- PROJECT 03: MECHANICAL LINKAGE -->
-          <article class="project-card reveal">
-            <div class="project-top">
-              <span>Project 03</span>
-              <span>Mechanical</span>
-            </div>
-
-            <div class="project-diagram" role="img"
-              aria-label="Simplified mechanical linkage with connected pivots and moving bars">
-
-              <svg viewBox="0 0 300 110" fill="none" aria-hidden="true">
-                <g stroke="#b8e986" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M47 79 84 28 205 34 247 79" />
-                  <path d="M47 79H247" stroke-dasharray="4 5" opacity=".55" />
-                  <path d="M84 28 111 79" stroke-width="1.5" opacity=".65" />
-                </g>
-
-                <g fill="#172a27" stroke="#b8e986" stroke-width="2">
-                  <circle cx="47" cy="79" r="6" />
-                  <circle cx="84" cy="28" r="6" />
-                  <circle cx="205" cy="34" r="6" />
-                  <circle cx="247" cy="79" r="6" />
-                </g>
-
-                <g fill="#dce9dc" font-size="8" text-anchor="middle">
-                  <text x="147" y="101">Connected links and pivots</text>
-                </g>
+          <article class="project-card">
+            <div class="project-visual visual-linkage">
+              <span class="visual-label">MECHANICAL MOTION</span>
+              <svg viewBox="0 0 320 150" role="img" aria-label="Simplified diagram of a four-point mechanical linkage">
+                <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M49 104 96 34 220 42 271 104"/><path d="M49 104h222" stroke-width="1.3" stroke-dasharray="4 6" opacity=".6"/><path d="M96 34 145 104" stroke-width="1.5" opacity=".6"/></g>
+                <g fill="#12342c" stroke="currentColor" stroke-width="2.5"><circle cx="49" cy="104" r="8"/><circle cx="96" cy="34" r="8"/><circle cx="220" cy="42" r="8"/><circle cx="271" cy="104" r="8"/></g>
+                <g fill="currentColor" font-size="9" text-anchor="middle"><text x="160" y="132">Links · pivots · motion</text></g>
               </svg>
             </div>
-
-            <p class="diagram-caption">
-              Simplified motion-system concept · explored through beginner-level learning
-            </p>
-
-            <h3>Mechanical Linkage Studies</h3>
-
-            <p>
-              Exploring simple mechanical linkages and motion through
-              introductory CAD concepts and Python simulations.
-            </p>
-
-            <div class="project-foot">
-              <span class="status">Learning project</span>
-              <span>CAD · Python</span>
+            <div class="project-content">
+              <div class="project-meta"><span>PROJECT 03</span><span class="project-kind">Learning project</span></div>
+              <h3>Mechanical Linkage</h3>
+              <p>An exploration of how connected links and pivot points can produce movement. I used this topic to build my understanding of basic mechanisms alongside introductory CAD and Python simulation learning.</p>
+              <div class="project-tags"><span>Mechanisms</span><span>CAD concepts</span><span>Python</span></div>
             </div>
           </article>
 
+          <article class="project-card">
+            <div class="project-visual visual-thermal">
+              <span class="visual-label">THERMAL ENERGY</span>
+              <svg viewBox="0 0 320 150" role="img" aria-label="Conceptual illustration of hot water, ice, and a small motor">
+                <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M25 50h65l-7 65H32l-7-65Z"/><path d="M34 77h48M34 86h48" opacity=".8"/><path d="M39 39q-7-9 0-17m20 17q-7-9 0-17m20 17q-7-9 0-17"/>
+                  <path d="M124 48 151 31 178 48 178 80 151 97 124 80Z"/><path d="M151 31v33m-27-16 27 16 27-16m-27 16v33"/>
+                  <path d="M98 75h17m-6-6 6 6-6 6M191 75h18m-6-6 6 6-6 6"/><rect x="216" y="48" width="79" height="55" rx="9"/><circle cx="255" cy="75" r="17"/><path d="M255 58v-13m-7 0h14m-7 47v12"/>
+                </g>
+                <g fill="currentColor" font-size="9" text-anchor="middle"><text x="57" y="132">Hot water</text><text x="151" y="116">Ice</text><text x="255" y="119">Small motor</text></g>
+              </svg>
+            </div>
+            <div class="project-content">
+              <div class="project-meta"><span>PROJECT 04</span><span class="project-kind">Hands-on experiment</span></div>
+              <h3>Thermal Energy Experiment</h3>
+              <p>A small hands-on setup using hot water, ice, and a motor. It was an opportunity to explore temperature differences, heat transfer, and the connection between energy and motion. I have not recorded measured output or efficiency values.</p>
+              <div class="project-tags"><span>Heat transfer</span><span>Experimentation</span></div>
+            </div>
+          </article>
         </div>
+        <p class="project-disclaimer">Project graphics are simplified explanatory illustrations, not photographs, construction drawings, or measured experimental results.</p>
       </div>
     </section>
 
-    <!-- INTERESTS -->
-    <section id="focus">
+    <section class="section-shell interests-section" id="interests">
       <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">03 / Areas of interest</div>
-            <h2>Where curiosity<br />takes me.</h2>
-          </div>
-
-          <p class="section-intro">
-            These are the engineering fields I’m most excited to learn
-            more about through future study and projects.
-          </p>
+        <div class="section-heading">
+          <div><p class="section-index">03 / AREAS OF INTEREST</p><h2>What I want<br>to understand.</h2></div>
+          <p class="section-intro">These are the fields guiding my future study. They represent interests I’m actively learning about—not professional specializations.</p>
         </div>
-
-        <div class="focus-grid reveal">
-          <article class="focus-card">
-            <div class="focus-num">01</div>
-            <h3>Intelligent Automation</h3>
-            <p>
-              How control systems, sensors and software can help machines
-              work more intelligently.
-            </p>
-          </article>
-
-          <article class="focus-card">
-            <div class="focus-num">02</div>
-            <h3>Electric Mobility</h3>
-            <p>
-              Exploring EV systems, efficient mechanical design and the
-              future of transportation.
-            </p>
-          </article>
-
-          <article class="focus-card">
-            <div class="focus-num">03</div>
-            <h3>Renewable Energy</h3>
-            <p>
-              Learning about sustainable energy technologies and practical
-              approaches to cleaner systems.
-            </p>
-          </article>
+        <div class="interest-grid">
+          <article class="interest-card"><span class="interest-number">01</span><div class="interest-icon" aria-hidden="true">⚙</div><h3>Mechanical Engineering</h3><p>Machine elements, mechanisms, materials, thermodynamics, and practical design.</p></article>
+          <article class="interest-card"><span class="interest-number">02</span><div class="interest-icon" aria-hidden="true">⌘</div><h3>Robotics &amp; Mechatronics</h3><p>How mechanical structures, electronics, sensing, and control can work together.</p></article>
+          <article class="interest-card"><span class="interest-number">03</span><div class="interest-icon" aria-hidden="true">◎</div><h3>Intelligent Automation</h3><p>Automated systems, feedback, sensors, and machines that respond to their environment.</p></article>
+          <article class="interest-card"><span class="interest-number">04</span><div class="interest-icon" aria-hidden="true">↗</div><h3>Sustainable Technology</h3><p>Clean energy, efficient systems, and engineering approaches with lower environmental impact.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="skills-section" id="skills">
-      <div class="container skills-wrap">
-        <div class="skills-copy reveal">
-          <div class="section-kicker">04 / Learning toolkit</div>
-          <h2>Building the<br />foundations.</h2>
-
-          <p>
-            I’m focused on developing solid fundamentals before chasing
-            complexity. These labels describe my current learning stage,
-            not professional certifications.
-          </p>
+    <section class="section-shell learning-section" id="learning">
+      <div class="container learning-layout">
+        <div class="learning-intro">
+          <p class="section-index">04 / CURRENT LEARNING</p><h2>Building the<br>fundamentals.</h2>
+          <p>I’m focusing on foundational knowledge and practical exploration. The labels below describe my current learning stage, not certificates or professional qualifications.</p>
         </div>
-
-        <div class="skill-list reveal">
-          <div class="skill-item">
-            <span>Physics & Mathematics</span>
-            <span class="skill-level">Core foundation</span>
-          </div>
-
-          <div class="skill-item">
-            <span>Python</span>
-            <span class="skill-level">Learning</span>
-          </div>
-
-          <div class="skill-item">
-            <span>CAD & 3D concepts</span>
-            <span class="skill-level">Exploring</span>
-          </div>
-
-          <div class="skill-item">
-            <span>Engineering research</span>
-            <span class="skill-level">Developing</span>
-          </div>
-
-          <div class="skill-item">
-            <span>Problem solving</span>
-            <span class="skill-level">Practising</span>
-          </div>
-
-          <div class="skill-item">
-            <span>Team collaboration</span>
-            <span class="skill-level">Experience</span>
-          </div>
+        <div class="learning-list">
+          <div class="learning-row"><span class="learning-name">Physics &amp; Mathematics</span><span class="learning-state">Core foundation</span></div>
+          <div class="learning-row"><span class="learning-name">Python</span><span class="learning-state">Learning</span></div>
+          <div class="learning-row"><span class="learning-name">CAD &amp; 3D concepts</span><span class="learning-state">Exploring</span></div>
+          <div class="learning-row"><span class="learning-name">Engineering research</span><span class="learning-state">Developing</span></div>
+          <div class="learning-row"><span class="learning-name">Problem solving</span><span class="learning-state">Practising</span></div>
+          <div class="learning-row"><span class="learning-name">Team project participation</span><span class="learning-state">Experience</span></div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
+    <section class="section-shell contact-section" id="contact">
       <div class="container">
-        <div class="contact-panel reveal">
-          <div class="section-kicker">05 / Get in touch</div>
-
-          <h2>Good ideas grow<br />when we connect.</h2>
-
-          <p>
-            I’m interested in learning from people who build, experiment
-            and think differently. For student collaborations, learning
-            opportunities or thoughtful conversations, feel free to reach out.
-          </p>
-
-          <div class="contact-actions">
-            <a class="button button-primary"
-               id="emailLink"
-               href="mailto:mdhimayet49@gmail.com">
-              Email me <span class="arrow">↗</span>
-            </a>
-
-            <a class="button button-secondary"
-               id="githubLink"
-               href="https://github.com/specialistbrosis-pixel"
-               target="_blank"
-               rel="noopener noreferrer">
-              GitHub profile <span class="arrow">↗</span>
-            </a>
-          </div>
-
-          <div class="contact-note">
-            Student portfolio · Learning, projects and engineering interests.
+        <div class="contact-panel">
+          <div class="contact-orbit" aria-hidden="true"></div>
+          <div class="contact-content">
+            <p class="section-index">05 / CONTACT</p>
+            <h2>Let’s learn<br><em>and build.</em></h2>
+            <p>I’m open to thoughtful conversations, student collaborations, and learning opportunities related to engineering and technology.</p>
+            <div class="contact-actions">
+              <a class="button button-primary" href="mailto:mdhimayet49@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+              <a class="button button-outline" href="https://github.com/specialistbrosis-pixel" target="_blank" rel="noopener noreferrer">GitHub profile <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="contact-email">mdhimayet49@gmail.com</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <span class="footer-name">MD HIMAYET</span>
-      <span>Built around curiosity, learning and engineering.</span>
-      <a class="back-top" href="#home">Back to top ↑</a>
+      <a class="footer-brand" href="#home">MD HIMAYET <span>·</span> ENGINEERING PORTFOLIO</a>
+      <span class="footer-note">A record of learning and exploration.</span>
+      <a class="back-to-top" href="#home">Back to top ↑</a>
+      <span class="copyright">© <span id="currentYear">2026</span> Md Himayet</span>
     </div>
   </footer>
 </body>
-              </html>
+</html>
