@@ -27,7 +27,7 @@ jobs:
       - name: Prepare static websites
         run: |
           mkdir -p _site
-          rsync -a --exclude='hazi-store-2/' --exclude='_site/' ./ _site/
+          rsync -a --exclude='.git/' --exclude='hazi-store-2/' --exclude='_site/' ./ _site/
           base64 -d hazi-store-2/site-bundle.zip.b64 > /tmp/hazi-store-bundle.zip
           mkdir -p /tmp/hazi-store
           unzip -q /tmp/hazi-store-bundle.zip -d /tmp/hazi-store
