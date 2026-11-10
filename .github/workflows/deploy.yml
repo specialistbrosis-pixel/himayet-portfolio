@@ -1,5 +1,4 @@
-
-name: Deploy portfolio
+name: Deploy portfolio and Hazi Store 2
 
 on:
   push:
@@ -25,12 +24,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Prepare static websites
+        run: |
+          mkdir -p _site
+          rsync -a --exclude='hazi-store-2/' --exclude='_site/' ./ _site/
+          base64 -d hazi-store-2/site-bundle.zip.b64 > /tmp/hazi-store-bundle.zip
+          mkdir -p /tmp/hazi-store
+          unzip -q /tmp/hazi-store-bundle.zip -d /tmp/hazi-store
+          mkdir -p _site/hazi-store-2
+          cp -R /tmp/hazi-store/hazi_store_2/. _site/hazi-store-2/
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "_site"
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
