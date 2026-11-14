@@ -1,52 +1,53 @@
 # Md Himayet — Engineering Portfolio
 
-A responsive, static portfolio website presenting my student projects, learning journey, and interests in engineering.
-
 **Live site:** https://specialistbrosis-pixel.github.io/himayet-portfolio/  
 **Repository:** https://github.com/specialistbrosis-pixel/himayet-portfolio
 
-## Portfolio focus
+A responsive, static portfolio documenting my student projects, technical learning, and early direction in mechanical engineering, robotics, mechatronics, intelligent automation, and sustainable technology.
 
-- Mechanical Engineering
-- Robotics and Mechatronics
-- Intelligent Automation
-- Sustainable Technology
+## Portfolio structure
 
-## Featured projects
+- Profile: academic stage, engineering direction, and learning philosophy.
+- Selected work: five student project records with roles, technical themes, and clear evidence boundaries.
+- Engineering method: the observe → model → prototype → measure-and-improve process I am developing for future work.
+- Beyond projects: practical experience in family retail operations and agricultural work.
+- Current foundation: academic subjects, tools being learned, and completed office-software training.
 
-1. **Green Hydrogen** — a student exploration of green hydrogen and its potential role in cleaner energy systems.
-2. **Tesla Coil Project** — a team activity related to electromagnetism, presented as a high-level learning record.
-3. **Mechanical Linkage** — an exploration of connected links, pivot points, and motion, alongside introductory CAD and Python learning.
-4. **Thermal Energy Experiment** — a small hands-on setup involving hot water, ice, and a motor, used to explore temperature differences, heat transfer, and energy.
+## Selected projects
 
-Project descriptions are intentionally limited to known information. The site does not claim unrecorded measurements, efficiency figures, awards, qualifications, or professional experience. The diagrams are explanatory illustrations, not photographs or construction drawings.
+1. Green Hydrogen — college project; received 2nd place.
+2. Tesla Coil Project — school team project; contributed in a system-management role.
+3. Mechanical Linkage — exploration of links, pivots, and constrained motion.
+4. Thermal Energy Experiment — hands-on exploration using hot water, ice, and a small motor.
+5. Step-to-Electricity Converter — built and sold as a student project.
+
+Project descriptions are intentionally factual. Measurements, efficiency values, construction specifications, credentials, and outcomes are not invented. Where test data has not been recorded, the site says so.
 
 ## Built with
 
-- HTML
-- CSS
+- Semantic HTML5
+- CSS3 (responsive layouts, reduced-motion support)
 - Vanilla JavaScript
-- Inline SVG illustrations
+- Original inline SVG illustrations
+- GitHub Pages
 
-There is no build step, package manager, or external JavaScript dependency.
+There is no build step, package manager, or external JavaScript dependency. GoatCounter is used for lightweight site analytics.
 
-## Run locally
+## Local preview
 
-1. Download or clone this repository.
-2. Open index.html in a modern browser.
-
-For a local static server, use any simple HTTP server or a Live Server extension in a code editor.
+1. Clone or download this repository.
+2. Open index.html in a modern browser, or serve the folder with a local static server.
 
 ## Deployment
 
-The repository includes a GitHub Actions workflow at .github/workflows/deploy.yml. It publishes the repository contents to GitHub Pages when changes are pushed to the main branch or when the workflow is manually run.
+The GitHub Actions workflow in .github/workflows/deploy.yml publishes the portfolio to GitHub Pages when changes are pushed to the configured branch or the workflow is run manually.
 
-## Updating the portfolio
+## Maintenance principles
 
-- Edit project text in index.html.
-- Update layout and visual styles in style.css.
-- Update the mobile navigation or small interactions in script.js.
-- Add real project photographs, diagrams, methods, and measured results only when they are available and can be described accurately.
+- Add project photos, diagrams, calculations, and measured results only when they are real and can be explained.
+- Record the problem, design choices, test conditions, results, and limitations for future case studies.
+- Keep the site accessible, mobile-friendly, fast, and dependency-light.
+- Do not describe learning interests as professional expertise.
 
 ---
 
